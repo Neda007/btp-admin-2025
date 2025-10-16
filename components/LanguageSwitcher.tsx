@@ -1,20 +1,21 @@
 "use client";
+import React from "react";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+export type Lang = "pt" | "fr" | "nl";
 
-export default function LanguageSwitcher({ current }: { current: "pt"|"fr"|"nl" }) {
-  const langs = ["pt","fr","nl"] as const;
+export default function LandingClient({ lang }: { lang: Lang }) {
   return (
-    <nav aria-label="Language switcher" className="flex gap-2">
-      {langs.map(l => (
-        <a
-          key={l}
-          href={`/${l}`}
-          className={`inline-block px-2.5 py-1 rounded-full text-sm border no-underline ${
-            l===current ? "border-slate-900" : "border-slate-300"
-          } bg-white text-slate-700 hover:bg-slate-50 cursor-pointer select-none`}
-        >
-          {l==="pt"?"Português":l==="fr"?"Français":"Nederlands"}
-        </a>
-      ))}
-    </nav>
+    <main className="min-h-screen bg-white text-slate-800">
+      <header className="p-4 border-b flex items-center justify-between relative z-50">
+        <h1 className="font-bold">AdminBTP Belgium · ({lang})</h1>
+        <LanguageSwitcher current={lang} />
+      </header>
+
+      <section id="servicos" className="p-4">Serviços ({lang})</section>
+      <section id="planos" className="p-4 border-t">Planos</section>
+      <section id="processo" className="p-4 border-t">Processo</section>
+      <section id="provas" className="p-4 border-t">Confiança</section>
+      <section id="contacto" className="p-4 border-t">Contacto</section>
+    </main>
   );
 }
