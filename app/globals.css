@@ -1,5 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+﻿@import "tailwindcss";
 
-html, body { @apply bg-white text-slate-800; }
+/* Optionnel: reset léger */
+:root { color-scheme: light; }
+html, body { margin: 0; padding: 0; }
