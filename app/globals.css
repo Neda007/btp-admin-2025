@@ -1,14 +1,8 @@
 ﻿@import "tailwindcss";
 
 /* reset léger */
-:root {
-  color-scheme: light;
-}
+:root { color-scheme: light; }
+html, body { margin: 0; padding: 0; }
 
-html, body {
-  margin: 0;
-  padding: 0;
-}
-
-/* ensure pointer on anchors */
-a { cursor: pointer; }
+/* anchors feel like buttons */
+a { cursor: pointer; user-select: none; pointer-events: auto; }
