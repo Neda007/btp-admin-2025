@@ -2,6 +2,8 @@
 
 const SUPPORTED = ["pt", "fr", "nl"] as const;
 
+export const dynamicParams = false;
+
 export default function Page({ params }: any) {
   const lang = (params?.lang ?? "pt") as string;
   const l = (SUPPORTED as readonly string[]).includes(lang) ? (lang as Lang) : "pt";
